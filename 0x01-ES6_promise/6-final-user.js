@@ -6,7 +6,8 @@ export default function (firstName, lastName, fileName) {
     .then((results) => {
       const array = [];
       for (const result of results) {
-        array.push({ status: result.status, value: result.value });
+        array.push({ status: result.status, value: result.status === 'fulfilled' ? result.value : result.reason });
       }
+      return array;
     });
 }
