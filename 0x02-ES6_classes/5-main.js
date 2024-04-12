@@ -4,9 +4,9 @@ const b = new Building(100);
 console.log(b);
 
 class TestBuilding extends Building {
-  evacuationWarningMessage() {
+  /* evacuationWarningMessage() {
     return `hello world${this.sqft}`;
-  }
+  } */
 }
 
 try {
