@@ -9,7 +9,7 @@ export default class HolbertonClass {
       return this._location;
     }
     if (hint === 'number') {
-      return this._location;
+      return this._size;
     }
     return this;
   }
