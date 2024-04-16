@@ -1,7 +1,8 @@
 export default function cleanSet(set, startString) {
   let finalString = '';
+  if (startString === '') { return finalString; }
   for (const value of set) {
-    if (value.startsWith(startString) && startString !== '') {
+    if (value.startsWith(startString)) {
       if (finalString === '') {
         finalString += value.slice(startString.length);
       } else {
