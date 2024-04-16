@@ -5,7 +5,7 @@ export default function updateStudentGradeByCity(listOfStudents, city, newGrades
       if (gradeObj === undefined) {
         return { ...filterObj, grade: 'N/A' };
       }
-      return { ...filterObj, grade: gradeObj.studentId };
+      return { ...filterObj, grade: gradeObj.grade };
     },
   );
   return newListOfStudents;
