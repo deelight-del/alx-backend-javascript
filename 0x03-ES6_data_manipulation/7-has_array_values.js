@@ -1,3 +1,6 @@
 export default function hasValuesFromArray(set, array) {
-  return Set(array).subSetOf(set);
+  for (const val of array) {
+    if (!set.has(val)) { return false; }
+  }
+  return true;
 }
