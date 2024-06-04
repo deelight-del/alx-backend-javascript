@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
  * Reading a file asynchronously.
  */
