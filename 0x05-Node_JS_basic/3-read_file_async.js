@@ -5,7 +5,7 @@ const { open } = require('node:fs/promises');
 let fileHandle;
 let totalStudents = 0;
 const departments = {};
-async function countStudents (path) {
+async function countStudents(path) {
   try {
     fileHandle = await open(path);
     for await (const line of fileHandle.readLines()) {
@@ -25,8 +25,7 @@ async function countStudents (path) {
       console.log(`Number of students in ${dept}: ${departments[dept].count}. List: ${departments[dept].listOfStudents.join(', ')}`);
     }
   } catch (err) {
-    console.log('Cannot load the database');
-    throw err;
+    throw new Error('Cannot load the database');
   } finally {
     if (fileHandle) { await fileHandle.close(); }
   }
