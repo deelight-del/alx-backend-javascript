@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 
-function countStudents (path) {
+function countStudents(path) {
   let content;
   try {
     content = fs.readFileSync(path, { encoding: 'utf-8' });
