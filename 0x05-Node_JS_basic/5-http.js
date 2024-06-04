@@ -9,11 +9,17 @@ const fs = require('fs');
 
 const app = createServer((req, res) => {
   if (req.url === '/') { res.end('Hello Holberton School!'); }
-  if (req.url === '/students') {
+  if (req.method === 'GET' && req.url === '/students') {
     res.write('This is the list of our students\n');
-    const dbName = process.argv[2];
+    // const dbName = process.argv[2];
+    let dbName;
+    if (process.argv.length < 3) { dbName = 'null'; }
+    else { dbName = process.argv[2]; }
     fs.open(dbName, (err, fd) => {
-      if (err) { throw new Error('Cannot load the database'); }
+      if (err) {
+        res.end('Cannot load the database');
+        return;
+      }
       fs.read(fd, (err, bytesRead, buffer) => {
         if (err) { throw new Error('Cannot load the database'); }
         const bulkData = buffer.toString('utf8', 0, bytesRead).trim();
