@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { open } = require('node:fs/promises');
+const { open } = require('fs/promises');
 
 let fileHandle;
 let totalStudents = 0;
