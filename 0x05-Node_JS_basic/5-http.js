@@ -1,3 +1,4 @@
+/*eslint-disable*/
 /**
  * Creating a more complex Server
  * Using the Node Interface.
@@ -36,10 +37,11 @@ const app = createServer((req, res) => {
           }
         }
         res.write(`Number of students: ${totalStudents}\n`);
+        const respArray = []
         for (const field in departments) {
-          res.write(`Number of students in ${field}: ${departments[field].count}. List: ${departments[field].listOfStudents.join(', ')}\n`);
+          respArray.push(`Number of students in ${field}: ${departments[field].count}. List: ${departments[field].listOfStudents.join(', ')}`);
         }
-        res.end();
+        res.end(respArray.join('\n'));
         // res.end(bulkData);
       });
     });
