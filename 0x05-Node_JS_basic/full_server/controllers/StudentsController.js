@@ -20,8 +20,9 @@ class StudentsController {
         response.write(responseData.join('\n'));
         response.end();
       })
-      .catch((err) => {
-        response.status(500).write(err);
+      .catch(() => {
+        response.status(500);
+        response.write('Cannot load the database');
         response.end();
       });
   }
@@ -37,8 +38,8 @@ class StudentsController {
       .then((dataObj) => {
         response.send(`List: ${dataObj[major].join(', ')}`);
       })
-      .catch((err) => {
-        response.status(500).send(err);
+      .catch(() => {
+        response.status(500).send('Cannot load the database');
       });
   }
 }
