@@ -8,7 +8,8 @@ const readDatabase = require('../utils');
 class StudentsController {
   static getAllStudents(request, response) {
     response.write('This is the list of our students\n');
-    readDatabase('./database.csv')
+    // readDatabase('./database.csv')
+    readDatabase(process.argv[2])
       .then((dataObj) => {
         let key;
         let value;
@@ -31,7 +32,8 @@ class StudentsController {
       response.status(500).send('Major parameter must be CS or SWE');
       return;
     }
-    readDatabase('./database.csv')
+    // readDatabase('./database.csv')
+    readDatabase(process.argv[2])
       .then((dataObj) => {
         response.send(`List: ${dataObj[major].join(', ')}`);
       })
