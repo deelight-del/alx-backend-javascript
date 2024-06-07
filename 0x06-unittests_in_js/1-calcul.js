@@ -12,7 +12,7 @@ function calculateNumber (type, a, b) {
     case 'SUBTRACT':
       return newA - newB;
     case 'DIVIDE':
-      if (b === 0) { return 'Error'; }
+      if (newB === 0) { return 'Error'; }
       return newA / newB;
   }
 }
