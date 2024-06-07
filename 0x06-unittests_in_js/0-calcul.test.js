@@ -18,7 +18,14 @@ describe('CalculateNumber', function () {
   it('1.5 + 3.7 should return 6', function () {
     assert.equal(CalculateNumber(1.5, 3.7), 6);
   });
-  it('1.5 + 3 should return 5', function () {
-    assert.equal(CalculateNumber(1.5, 3), 5);
+
+  it('1.7 + 3 should return 5', function () {
+    assert.equal(CalculateNumber(1.7, 3), 5);
+  });
+  it('1.2 + 6 should return 5', function () {
+    assert.equal(CalculateNumber(1.2, 6), 7);
+  });
+  it('0.2 + 6 should return 5', function () {
+    assert.equal(CalculateNumber(0.2, 6), 6);
   });
 });
